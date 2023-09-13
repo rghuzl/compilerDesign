@@ -1,0 +1,17 @@
+# include <stdio.h>
+
+int main()
+{
+
+    //  a comment
+
+
+    @
+    double d = 24.8;
+    char ch = '$';
+    /* a 
+    multiline 
+    comment
+    */
+   
+}

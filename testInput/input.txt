@@ -1,0 +1,9 @@
+# include <stdio.h>
+int main()
+{
+    char ch = 'a';
+    int num = 45;
+    char var1 = '7';
+    if (3 > 5)
+    num = 60;  
+}
