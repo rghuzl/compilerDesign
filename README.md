@@ -1,4 +1,4 @@
-## compilerDesign
+# compilerDesign
 <h2>How To Use:</h2>
 <h3>Step1: clone it <br>
 Step2: Move to root Directory(compilerDesign)  <br>
