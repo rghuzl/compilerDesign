@@ -1,0 +1,41 @@
+In the C programming language, lexical errors occur when the source code does not conform to the rules of the language at the level of individual tokens or symbols. Here is a list of some possible lexical errors in C:
+
+    Misspelled Keywords: Using incorrect spellings for C keywords, such as "whil" instead of "while" or "iint" instead of "int."
+
+    Missing Semicolons: Forgetting to place a semicolon (;) at the end of a statement. This is necessary to terminate most statements in C.
+
+    Unterminated Strings: Not properly closing a string with double quotes (") or using an odd number of double quotes within a string.
+
+    Mismatched Parentheses: Unequal numbers of opening and closing parentheses, such as ( without a corresponding ) or vice versa.
+
+    Mismatched Braces: Unequal numbers of opening and closing curly braces {} in block structures like functions or loops.
+
+    Mismatched Square Brackets: Unequal numbers of opening and closing square brackets [] in array declarations or indexing.
+
+    Invalid Characters: Using characters that are not allowed in C source code, such as non-ASCII characters, special symbols, or control characters.
+
+    Invalid Escape Sequences: Using invalid escape sequences in strings, like \z or \xH.
+
+    Invalid Identifiers: Using identifiers that do not follow C's naming rules, such as starting with a digit or containing spaces.
+
+    Missing or Extra Operators: Not using operators where required, or using operators where they don't make sense, such as int x = +*3;.
+
+    Missing or Extra Delimiters: Missing or extra commas, colons, or other punctuation marks in function calls, variable declarations, or array initializations.
+
+    Incorrect Comments: Incorrectly formatted or unterminated comments, such as /* Comment without closing */ or // Unclosed comment.
+
+    Missing Header Files: Using functions or data types without including the necessary header files with #include.
+
+    Reserved Keywords as Identifiers: Using reserved keywords like int or while as identifiers or variable names.
+
+    Missing Escape Character: Forgetting to escape special characters in strings or character constants, such as " inside a string.
+
+    Illegal Numeric Constants: Using numeric constants that do not adhere to C's rules, such as 1.23.45 for a floating-point number.
+
+    Incorrect Preprocessor Directives: Errors in preprocessor directives, such as misspelling #include or using #ifdef without a defined macro.
+
+    Incomplete Character Constants: Using incomplete character constants, like 'A instead of 'A'.
+
+    Misplaced Labels: Using labels incorrectly, such as placing them inside a function or before a variable declaration.
+
+    Invalid Escape Sequences in Character Constants: Using invalid escape sequences within character constants, like '\z'.
