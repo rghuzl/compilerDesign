@@ -1,0 +1,61 @@
+Missing Semicolon: Failure to end a statement with a semicolon (;). For example:
+
+
+int x = 5
+Missing Parentheses: Not closing parentheses properly in expressions. For example:
+
+
+if (x > 0 {
+Mismatched Braces: Not matching opening and closing braces correctly in control structures (if, for, while, etc.) or functions. For example:
+
+
+void func() {
+    // Some code
+Missing Braces: Not using braces when they are required, such as in multi-line if statements or loops. For example:
+
+
+if (x > 0)
+    printf("x is positive");
+Undefined Variable: Using a variable that has not been declared or defined. For example:
+
+
+printf("%d", y);
+Incorrect Function Calls: Mismatching the number or type of arguments in function calls. For example:
+
+
+int sum = add(5, 3, 2);
+Illegal Characters: Using characters or symbols that are not allowed in C. For example:
+
+
+int @variable = 10;
+Using Reserved Words: Using words that are reserved for the C language, such as int, if, while, as variable names. For example:
+
+
+int int = 5;
+Missing Main Function: Not having a main function in a C program, as it is the entry point for execution. For example:
+
+
+void myFunction() {
+    // Some code
+}
+Incorrect Use of Quotes: Mismatching single or double quotes in character or string literals. For example:
+
+
+char c = 'A";
+Missing Header Files: Not including necessary header files for functions or libraries used in your program. For example:
+
+
+#include <stdio.h>
+int main() {
+    printf("Hello, World!\n");
+}
+Incorrect Preprocessor Directives: Errors in preprocessor directives, such as #define or #include. For example:
+
+
+#defin MAX_VALUE 100
+Using Reserved Function Names: Defining functions with the same name as library functions (e.g., main, printf, etc.). For example:
+
+
+int main() {
+    // Your code
+}
