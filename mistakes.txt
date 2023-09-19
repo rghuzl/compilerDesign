@@ -1,0 +1,6 @@
+->  forgot rules for ++ and --
+->  if 2 or more rules having some common part then
+     rule corresponding to longest  matched string will we accepted
+     ( helped in fixing : how to detect MULTILINE_COMMENT without ending properly )
+
+->   if backslash in string then use escape sequence('\\') to detect it
