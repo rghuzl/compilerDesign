@@ -1,9 +1,15 @@
 # include <stdio.h>
-int main()
-{
-    char ch = 'a';
-    int num = 45;
-    char var1 = '7';
-    if (3 > 5)
-    num = 60;  
+#include "conio.H"
+
+#define max 5
+
+"hello"
+main(){
+    // this is a test 
+    char k = 'ab';
+    char newline = '\n';
+    string = "Detroit become human";
+    /* thankyou
+    have a */
+    */ nice day.
 }
