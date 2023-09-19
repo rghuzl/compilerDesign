@@ -1,0 +1,17 @@
+# include <stdio.h>
+#include "conio.H"
+
+#define max 5
+
+"hello"
+main(){
+    // this is a test 
+    char k = 'ab';
+    char b = '-';
+    char newline = '\n';
+    \n
+    string = "Detroit become human";
+    /* thankyou
+    have a */
+    */ nice day.
+}

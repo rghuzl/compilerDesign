@@ -5,7 +5,7 @@
 
 "hello"
 main(){
-    // a comment
+    
         int a = 100; int b = 1;
         ;
         a = 200;

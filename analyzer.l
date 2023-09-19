@@ -88,7 +88,7 @@ void validateMultilineComment(char com[],int yyleng){
 
 // handle line count in multiline comment 
 void handleLineCount(char mltLineCom[],int* yylineno,int yyleng){
-    printf("\n< MULTILINE_COMMENT:%d >\n",*yylineno);
+    printf("\n< MULTILINE_COMMENT >\nat line:%d\n",*yylineno);
     for(int i = 0;i < yyleng;i++)
         if(yytext[i] == '\n')   (*yylineno)++;
     
@@ -113,15 +113,17 @@ ARITHMETIC_OPERATOR "+"|"-"|"*"|"/"|"%"
 BITWISE_OPERATOR "&"|"^"|"|"|"~"
 ASSIGNMENT_OPERATOR "="|"+="|"-="|"%="|"*="|"/="|"&="|"^="|"|="|"~="|">>="|"<<="
 DELIMITER [,;]
-SPECIAL_CHAR "@"|"#"|"`"|"$"|"{"|"}"|"["|"]"|"."|"("|")"
+SPECIAL_CHAR "@"|"#"|"`"|"$"|"{"|"}"|"["|"]"|"."|"("|")"|"\\"|"?"
+
 KEYWORD "auto"|"double"|"int"|"struct"|"break"|"else"|"long"|"switch"|"case"|"enum"|"register"|"typedef"|"char"|"extern"|"return"|"union"|"const"|"float"|"short"|"unsigned"|"continue"|"for"|"signed"|"void"|"default"|"goto"|"sizeof"|"volatile"|"do"|"if"|"static"|"while"
 INTEGER [+-]?[0-9]+ 
 FLOAT [-+]?[0-9]+"."[0-9]+[f]?|[-+]?[0-9]+"."|[-+]?"."[0-9]+[f]?|[-+]?[0-9]+[e,E]"-"[0-9]+
 IDENTIFIER [a-zA-Z_][a-zA-Z0-9]* 
 
 /* char */
-CHAR "'"."'"
+CHAR "'"."'"|"'\\n'"|"'\\b'"|"'\\t'"|"'\\a'"|"'\\v'"|"'\\0'"|"'\\r'"|"'\\\"'"|"'\\\''"|"'\\f'"|"'\\'"
 CHAR_ERROR "'".
+MORE_CHAR_ERROR "'"...*"'"
 /* string <mistake1:included new line in between string but fixed> */
 STRING "\"".*"\""
 STRING_ERROR "\""
@@ -144,12 +146,15 @@ NEW_LINE \n
 {FLOAT}                     lookInSymbolTable(2,hashTable,yytext,"Float Constant",yyleng,yylineno);
 {INTEGER}                   lookInSymbolTable(3,hashTable,yytext,"Integer Constant",yyleng,yylineno);
 {CHAR}                      lookInSymbolTable(4,hashTable,yytext,"Char Literal",yyleng,yylineno);
+
 {CHAR_ERROR}                printf("\n\x1B[31merror! expected terminating ' character\nat line:%d\n\x1B[0m",yylineno);
+{MORE_CHAR_ERROR}        printf("\n\x1B[31merror! too many character for \" Char Literal \"\nat line:%d\n\x1B[0m",yylineno);
+
 {STRING}                    lookInSymbolTable(5,hashTable,yytext,"String Literal",yyleng,yylineno);
 {STRING_ERROR}              printf("\n\x1B[31merror! expected terminating \" character\nat line:%d\n\x1B[0m",yylineno); 
 {SPECIAL_CHAR}              lookInSymbolTable(6,hashTable,yytext,"Special Character",yyleng,yylineno);
 {DELIMITER}                 lookInSymbolTable(7,hashTable,yytext,"Seperator",yyleng,yylineno);
-{SINGEL_LINE_COMMENT}       printf("\n< SINGEL_LINE_COMMENT:%d >\n",yylineno);
+{SINGEL_LINE_COMMENT}       printf("\n< SINGEL_LINE_COMMENT >\nat line:%d\n",yylineno);
 {MULTILINE_COMMENT}         handleLineCount(yytext,&yylineno,yyleng);
 {MULTILINE_COMMENT_ERROR}   printf("\n\x1B[31merror! multiline comment starting at line %d not terminated with'*/'\x1B[0m\n",yylineno);
 {ARITHMETIC_OPERATOR}       lookInSymbolTable(8,hashTable,yytext,"Arithmetic Operator",yyleng,yylineno);
@@ -158,7 +163,7 @@ NEW_LINE \n
 {COMPARISON_OPERATOR}       lookInSymbolTable(11,hashTable,yytext,"Comparison Operator",yyleng,yylineno);
 {BITWISE_OPERATOR}          lookInSymbolTable(12,hashTable,yytext,"Bitwise Operator",yyleng,yylineno);
 {SHIFT_OPERATOR}            lookInSymbolTable(13,hashTable,yytext,"Shift Operator",yyleng,yylineno);
-.;
+
 %%
 
 int main(){
