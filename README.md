@@ -1,5 +1,5 @@
 # compilerDesign
-<h2>How To Use:</h2><br>
+<h2 style="color🍏;">How To Use:</h2><br>
 <h3>Step1: clone it <br><br>
 Step2: Move to root Directory(compilerDesign)  <br><br>
        run command >> flex analyzer.l
